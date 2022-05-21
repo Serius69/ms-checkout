@@ -13,4 +13,4 @@ ENV SPRING_PROFILE local
 ENV SERVER_PORT 9091
 ENV EUREKA_URI http://localhost:8761/eureka
 
-ENTRYPOINT [ "java","-cp","app:app/lib/*","/arquitectura.software.mscostumer.MsCostumerApplication" ]
+ENTRYPOINT [ "java","-cp","app:app/lib/*","/ucb.edu.arqsoft.mscheckout.MsCheckoutApplication" ]
