@@ -1,5 +1,6 @@
 package ucb.edu.arqsoft.mscheckout.controller;
 
+import ucb.edu.arqsoft.mscheckout.service.CheckoutService;
 import ucb.edu.arqsoft.mscheckout.dto.*;
 import ucb.edu.arqsoft.mscheckout.service.*;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/checkout")
 public class CheckoutController {
 
-    private final CheckoutService checkoutService;
+    private CheckoutService checkoutService;
 
     public CheckoutController(CheckoutService checkoutService) {
         this.checkoutService = checkoutService;
@@ -18,8 +19,11 @@ public class CheckoutController {
     @PostMapping("/purchase")
     public PurchaseResponse placeOrder(@RequestBody Purchase purchase) {
 
-        return checkoutService.placeOrder(purchase);
+        PurchaseResponse purchaseResponse = checkoutService.placeOrder(purchase);
+
+        return purchaseResponse;
     }
+
 
 }
 
