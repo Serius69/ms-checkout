@@ -11,9 +11,12 @@ public class MyAppConfig implements WebMvcConfigurer {
     @Value("${allowed.origins}")
     private String[] theAllowedOrigins;
 
+    /*
     @Value("${aquitectura.software}")
     private String arquitecturaSoftware;
 
+
+     */
     @Value("${spring.data.rest.base-path}")
     private String basePath;
 
@@ -24,9 +27,12 @@ public class MyAppConfig implements WebMvcConfigurer {
         cors.addMapping(basePath + "/**").allowedOrigins(theAllowedOrigins);
     }
 
+    /*
     public String showConfiguration(){
         return String.format("Los datos yml:  arquitecturaSoftware: %s", arquitecturaSoftware);
     }
+
+     */
 }
 
 
