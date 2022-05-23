@@ -1,0 +1,2 @@
+POST https://localhost:9020/api/checkout/purchase
+
